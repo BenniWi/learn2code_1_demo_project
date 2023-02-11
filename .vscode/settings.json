@@ -1,0 +1,13 @@
+{
+"markdown-pdf.styles": [
+    "markdown-pdf.css",
+  ],
+"markdown-pdf.stylesRelativePathFile": true,
+"markdown-pdf.highlightStyle": "github.css",
+"markdown-pdf.displayHeaderFooter": false,
+
+
+"markdown.styles": [
+    "docs/markdown-pdf.css"
+  ]
+}
