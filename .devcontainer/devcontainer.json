@@ -22,7 +22,8 @@
         "ms-vscode.cpptools",
         "ms-vscode.cpptools-extension-pack",
         "franneck94.c-cpp-runner",
-        "yzane.markdown-pdf"
+        "yzane.markdown-pdf",
+        "tomoki1207.pdf",
 			]
 		}
 	}
