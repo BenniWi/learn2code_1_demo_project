@@ -4,10 +4,15 @@
   ],
 "markdown-pdf.stylesRelativePathFile": true,
 "markdown-pdf.highlightStyle": "github.css",
-"markdown-pdf.displayHeaderFooter": false,
+"markdown-pdf.displayHeaderFooter": true,
+"markdown-pdf.footerTemplate": "<div style=\"font-size: 8px; color: green; margin-left: auto; margin-right: 30px\"> <span class='pageNumber'></span>/<span class='totalPages'></span></div>",
+"markdown-pdf.headerTemplate": " ",
 
 
 "markdown.styles": [
     "docs/markdown-pdf.css"
-  ]
+  ],
+
+  "cSpell.language": "en,de-de",
+
 }

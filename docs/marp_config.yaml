@@ -1,9 +1,0 @@
-allowLocalFiles: true
-options:
-  looseYAML: false
-  markdown:
-    breaks: true
-pdf: true
-html: true
-pdfOutlines: 
-  headings: true
