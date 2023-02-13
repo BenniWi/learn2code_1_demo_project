@@ -53,6 +53,18 @@ TEST_F(LibraryTestFixture, add_book_overflow)
     ASSERT_EQ(nullptr, b);
 }
 
+TEST_F(LibraryTestFixture, find_student)
+{
+    student const *s = library_get_student_4_matrnr(&lib, lib.student_list[3].matrnr);
+    ASSERT_EQ(s->matrnr, lib.student_list[3].matrnr);
+}
+
+TEST_F(LibraryTestFixture, find_not_existing_student)
+{
+    student const *s = library_get_student_4_matrnr(&lib, 12345);
+    ASSERT_EQ(s, nullptr);
+}
+
 TEST_F(LibraryTestFixture, add_student_overflow)
 {
     student const *s = library_add_student(&lib, "nonsense name");

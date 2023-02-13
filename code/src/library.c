@@ -73,6 +73,26 @@ book const *library_add_book(library *const l, const char title[])
     return NULL;
 }
 
+student const *library_get_student_4_matrnr(library *l, unsigned int MatrNr)
+{
+    if (l == NULL)
+    {
+        printf("Invalid data\n");
+    }
+    else
+    {
+        for (unsigned int i = 0; i < LIBRARY_MAX_NUM_STUDENTS; ++i)
+        {
+            if (l->student_list[i].matrnr == MatrNr)
+            {
+                return &(l->student_list[i]);
+            }
+        }
+        printf("Finding a student for the MatrNr=%i was not possible\n", MatrNr);
+    }
+    return NULL;
+}
+
 void library_lend_book(library *const l, student const *const s, const unsigned int ID)
 {
     if ((l == NULL) || (s == 0))

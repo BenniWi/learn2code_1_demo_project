@@ -33,7 +33,7 @@ void student_print(student const *const s)
         // \033[ to start ANSI escape
         // 4 is underlined, 35 is magenta, 0 deletes all formats to return to default
         printf("name: \033[4;35m%s\033[0m\n", s->name);
-        printf("ID: %u\n", s->matrnr);
+        printf("MatrNr: %u\n", s->matrnr);
         printf("=====================\n");
     }
 }

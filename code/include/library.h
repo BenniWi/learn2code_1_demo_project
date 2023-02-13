@@ -20,6 +20,8 @@ student const *library_add_student(library *l, const char name[]);
 
 book const *library_add_book(library *l, const char title[]);
 
+student const *library_get_student_4_matrnr(library *l, unsigned int MatrNr);
+
 void library_lend_book(library *l, student const *s, unsigned int ID);
 
 void library_return_book(library *l, unsigned int ID);
