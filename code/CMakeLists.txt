@@ -16,7 +16,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 add_compile_options(-Wall -Wextra -pedantic -O0)
 
 # add a library for your functions
-add_library(uni_library 
+add_library(uni_library STATIC
     src/student.c
     src/library.c
     src/book.c)

@@ -121,6 +121,8 @@ student const *library_find_book(library const *const l, const unsigned int ID)
         {
             if (l->book_list[i].id == ID)
             {
+                printf("The book with ID %i is lent by student: \n", ID);
+                student_print(l->lend_list[i]);
                 return l->lend_list[i];
             }
         }
