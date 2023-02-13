@@ -29,6 +29,6 @@
       "editor.defaultFormatter": "xaver.clang-format"
   },
   "clang-tidy.buildPath": "build",
-  "clang-tidy.fixOnSave": true,
+  "clang-tidy.fixOnSave": false,
   "clang-tidy.checks": ["*"]
 }

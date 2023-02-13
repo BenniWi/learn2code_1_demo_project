@@ -4,14 +4,14 @@
 #include "book.h"
 #include "student.h"
 
-#define LIBARY_MAX_NUM_STUDENTS 10
-#define LIBARY_MAX_NUM_BOOKS 10
+#define LIBRARY_MAX_NUM_STUDENTS 5
+#define LIBRARY_MAX_NUM_BOOKS 5
 
 typedef struct
 {
-    student student_list[LIBARY_MAX_NUM_STUDENTS];
-    book book_list[LIBARY_MAX_NUM_BOOKS];
-    student const *lend_list[LIBARY_MAX_NUM_BOOKS];
+    student student_list[LIBRARY_MAX_NUM_STUDENTS];
+    book book_list[LIBRARY_MAX_NUM_BOOKS];
+    student const *lend_list[LIBRARY_MAX_NUM_BOOKS];
 } library;
 
 void library_init(library *l);
@@ -32,6 +32,6 @@ void library_list_students(library const *l);
 
 void library_list_books_4_student(library const *l, unsigned int MatrNr);
 
-void libary_print(library const *l);
+void library_print(library const *l);
 
 #endif /* LIBRARY_H_ */

@@ -4,10 +4,10 @@ extern "C"
 #include "book.h"
 }
 
-class BookTest : public ::testing ::Test
+class BookTestFixture : public ::testing ::Test
 {
    protected:
-    book b;
+    book b{};
     virtual void SetUp()
     {
         // set some values to check if the init method overwrites them correctly
@@ -18,8 +18,24 @@ class BookTest : public ::testing ::Test
 };
 
 // the first test we want to write
-TEST_F(BookTest, init)
+TEST_F(BookTestFixture, init_valid)
 {
     ASSERT_STREQ("my first book", b.title);
     ASSERT_NE(0, b.id);
+}
+
+TEST(BookTest, init_invalid)
+{
+    book_init(nullptr, "my first book");
+}
+
+
+TEST_F(BookTestFixture, print_valid)
+{
+    book_print(&b);
+}
+
+TEST(BookTest, print_invalid)
+{
+    book_print(nullptr);
 }

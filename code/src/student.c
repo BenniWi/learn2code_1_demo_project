@@ -6,9 +6,16 @@
 
 void student_init(student *const s, const char name[])
 {
-    s->matrnr = rand();  // Returns a pseudo-random integer between 0 and RAND_MAX.
-    // instead of using a for loop to copy the array, we can use strncpy
-    strncpy(s->name, name, strlen(name) + 1);
+    if (s == NULL)
+    {
+        printf("Invalid data\n");
+    }
+    else
+    {
+        s->matrnr = rand();  // Returns a pseudo-random integer between 0 and RAND_MAX.
+        // instead of using a for loop to copy the array, we can use strncpy
+        strncpy(s->name, name, strlen(name) + 1);
+    }
 }
 
 void student_print(student const *const s)

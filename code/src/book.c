@@ -6,9 +6,16 @@
 
 void book_init(book *const b, const char title[])
 {
-    b->id = rand();  // Returns a pseudo-random integer between 0 and RAND_MAX.
-    // instead of using a for loop to copy the array, we can use strncpy
-    strncpy(b->title, title, strlen(title) + 1);
+    if (b == NULL)
+    {
+        printf("Invalid data\n");
+    }
+    else
+    {
+        b->id = rand();  // Returns a pseudo-random integer between 0 and RAND_MAX.
+        // instead of using a for loop to copy the array, we can use strncpy
+        strncpy(b->title, title, strlen(title) + 1);
+    }
 }
 
 void book_print(book const *const b)
