@@ -7,7 +7,7 @@ extern "C"
 class LibraryTest : public ::testing ::Test
 {
    protected:
-    library lib{}{};
+    library lib{};
     virtual void SetUp()
     {
         // set some values to check if the init method overwrites them correctly
