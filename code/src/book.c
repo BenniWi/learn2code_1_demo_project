@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void book_init(book *const b, const char title[])
+void book_init(book *const b, const char title[BOOK_MAX_NAME_LENGTH])
 {
     if (b == NULL)
     {

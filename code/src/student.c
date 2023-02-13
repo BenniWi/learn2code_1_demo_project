@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void student_init(student *const s, const char name[])
+void student_init(student *const s, const char name[STUDENT_MAX_NAME_LENGTH])
 {
     if (s == NULL)
     {
