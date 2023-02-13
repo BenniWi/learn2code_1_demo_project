@@ -13,19 +13,22 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # add some compile options
-add_compile_options(-Wall -Wextra -Werror -pedantic -O0)
+add_compile_options(-Wall -Wextra -pedantic -O0)
 
 # add a library for your functions
-add_library(functions_lib STATIC src/functions.c)
+add_library(uni_library 
+    src/student.c
+    src/library.c
+    src/book.c)
 # add the includes to the library
-target_include_directories(functions_lib PUBLIC include)
+target_include_directories(uni_library PUBLIC include)
 
 # add an executabel and assign files to it
-add_executable(exam_1_ex_exec src/main.c)
+add_executable(exam_1_main src/main.c)
 # add the include directories
-target_include_directories(exam_1_ex_exec PUBLIC include)
+target_include_directories(exam_1_main PRIVATE include)
 # link your library
-target_link_libraries(exam_1_ex_exec PRIVATE functions_lib)
+target_link_libraries(exam_1_main PRIVATE uni_library)
 
 
 # enable the testing
@@ -35,12 +38,15 @@ find_package(GTest REQUIRED)
 # include the gtest CMake stuff
 include(GoogleTest)
 # create a test executable
-add_executable(exam_1_tests test/test_functions.cpp)
+add_executable(uni_library_tests 
+    test/book_test.cpp
+    test/student_test.cpp
+    test/library_test.cpp)
 # link the gtest libraries
-target_link_libraries(exam_1_tests PRIVATE GTest::GTest GTest::Main)
+target_link_libraries(uni_library_tests PRIVATE GTest::GTest GTest::Main)
 # link the library we want to test
-target_link_libraries(exam_1_tests PRIVATE functions_lib)
+target_link_libraries(uni_library_tests PRIVATE uni_library)
 # add the inlucde direactores
-target_include_directories(exam_1_tests PUBLIC include)
+target_include_directories(uni_library_tests PRIVATE include)
 # discover and add tests to the test list
-gtest_discover_tests(exam_1_tests)
+gtest_discover_tests(uni_library_tests)

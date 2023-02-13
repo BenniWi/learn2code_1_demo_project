@@ -14,5 +14,21 @@
   ],
 
   "cSpell.language": "en,de-de",
+  "files.associations": {
+    "*.tcc": "c",
+    "library.h": "c",
+    "errno.h": "c",
+    "string.h": "c"
+  },
 
+
+  "[c]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "[cpp]": {
+      "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "clang-tidy.buildPath": "build",
+  "clang-tidy.fixOnSave": true,
+  "clang-tidy.checks": ["*"]
 }
