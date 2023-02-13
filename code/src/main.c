@@ -1,7 +1,7 @@
+#include <stdio.h>
+
 #include "book.h"
 #include "student.h"
-
-#include <stdio.h>
 
 int main()
 {
@@ -14,20 +14,20 @@ int main()
     printf("List books for student \t[5]\n");
     printf("Find a book \t\t[6]\n");
 
-/*
-    student max;
-    student maria;
-    book tele;
-    book tubbies;
+    /*
+        student max;
+        student maria;
+        book tele;
+        book tubbies;
 
-    student_init(&max, "Max Mustermann");
-    student_init(&maria, "Maria Musterfrau");
-    student_print(&max);
-    student_print(&maria);
+        student_init(&max, "Max Mustermann");
+        student_init(&maria, "Maria Musterfrau");
+        student_print(&max);
+        student_print(&maria);
 
-    book_init(&tele, "ah oh, lala");
-    book_init(&tubbies, "ah oh, tipsie");
-    book_print(&tele);
-    book_print(&tubbies);
-*/
+        book_init(&tele, "ah oh, lala");
+        book_init(&tubbies, "ah oh, tipsie");
+        book_print(&tele);
+        book_print(&tubbies);
+    */
 }
