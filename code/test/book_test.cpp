@@ -29,7 +29,6 @@ TEST(BookTest, init_invalid)
     book_init(nullptr, "my first book");
 }
 
-
 TEST_F(BookTestFixture, print_valid)
 {
     book_print(&b);
