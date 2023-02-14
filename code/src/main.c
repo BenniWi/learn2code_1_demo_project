@@ -45,7 +45,7 @@ int main()
         printf("Choose your library action: \n");
         printf("Print library \t\t[1]\n");
         printf("Add student \t\t[2]\n");
-        printf("Add Book \t\t[3]\n");
+        printf("Add book \t\t[3]\n");
         printf("Lend book \t\t[4]\n");
         printf("Return book \t\t[5]\n");
         printf("List books for student \t[6]\n");
