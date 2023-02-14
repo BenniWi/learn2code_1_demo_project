@@ -25,7 +25,7 @@ class LibraryTestFixture : public ::testing ::Test
             library_add_book(&lib, title);
         }
 
-        library_lend_book(&lib, &lib.student_list[1], lib.book_list[2].id);
+        library_lend_book(&lib, lib.student_list[1].matrnr, lib.book_list[2].id);
     }
 };
 
@@ -79,14 +79,14 @@ TEST_F(LibraryTestFixture, lend_book)
 
 TEST_F(LibraryTestFixture, lend_not_available_book)
 {
-    library_lend_book(&lib, &lib.student_list[2], lib.book_list[2].id);
+    library_lend_book(&lib, lib.student_list[2].matrnr, lib.book_list[2].id);
     // book is still lent correctly
     ASSERT_EQ(lib.lend_list[2]->matrnr, lib.student_list[1].matrnr);
 }
 
 TEST_F(LibraryTestFixture, lend_not_existing_book)
 {
-    library_lend_book(&lib, &lib.student_list[2], 123456);
+    library_lend_book(&lib, lib.student_list[2].matrnr, 123456);
 }
 
 TEST_F(LibraryTestFixture, return_book)
@@ -129,7 +129,7 @@ TEST_F(LibraryTestFixture, find_not_existing_book)
 TEST_F(LibraryTestFixture, list_books_4_students)
 {
     // lend a second book
-    library_lend_book(&lib, &lib.student_list[1], lib.book_list[3].id);
+    library_lend_book(&lib, lib.student_list[1].matrnr, lib.book_list[3].id);
     library_list_books_4_student(&lib, lib.student_list[1].matrnr);
 }
 

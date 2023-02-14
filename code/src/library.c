@@ -93,9 +93,9 @@ student const *library_get_student_4_matrnr(library *l, unsigned int MatrNr)
     return NULL;
 }
 
-void library_lend_book(library *const l, student const *const s, const unsigned int ID)
+void library_lend_book(library *const l, unsigned int MatrNr, const unsigned int ID)
 {
-    if ((l == NULL) || (s == 0))
+    if (l == NULL)
     {
         printf("Invalid data\n");
     }
@@ -107,11 +107,12 @@ void library_lend_book(library *const l, student const *const s, const unsigned 
             {
                 if (l->lend_list[i] == NULL)
                 {
+                    student const *const s = library_get_student_4_matrnr(l, MatrNr);
                     l->lend_list[i] = s;
                 }
                 else
                 {
-                    printf("Book wiht ID=%i is already lent by student:\n", ID);
+                    printf("Book with ID=%i is already lent by student:\n", ID);
                     student_print(l->lend_list[i]);
                 }
                 return;
