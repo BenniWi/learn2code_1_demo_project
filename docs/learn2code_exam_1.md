@@ -18,13 +18,20 @@
 
 ## Inhalt der Prüfung
 
-Entwerfen Sie ein Programm zur Verwaltung einer Studierendenbibliothek (Datenbank).
+Entwerfen Sie ein Programm zur Verwaltung einer Bibliothek für Studierende. Dazu soll eine Hauptanwendung zur Verfügung gestellt werden, die verschiedene Interaktionen zur Verfügung stellt. Entsprechende Details finden sich im Kapitel [Vorgaben zur Arbeit](#vorgaben-zur-arbeit). Die Verwendung von *CMake*, *Git*, *gtest* und andere Softwarewerkzeuge fließen dabei genauso in die Bewertung wie der Quellcode selbst. Näheres dazu finden Sie im Kapitel [Bewertungskriterien](#bewertungskriterien).
 
 ## Bearbeitung und Abgabe
 
 ### Bearbeitung
-Die Bearbeitung sollte in Gruppen von zwei Personen erfolgen.
+
+Die Bearbeitung soll in Gruppen von zwei Personen erfolgen.
 In Einzelfällen kann eine Bearbeitung auch einzeln durchgeführt werden. Dies sollte jedoch vorher abgeklärt werden.
+
+### Vorraussetzungen
+
+Auf der [moodle-Seite des Kurs](https://elearning.dhbw-ravensburg.de/course/view.php?id=10824) muss vorab:
+1. Ein Gruppe für den Programmentwurf gewählt werden
+2. Die Aufgabe *Bestätigung der Abgabeform* abgeschlossen sein
 
 ### Bearbeitungszeitraum
 
@@ -32,9 +39,10 @@ In Einzelfällen kann eine Bearbeitung auch einzeln durchgeführt werden. Dies s
 * Der Bearbeitungszeitraum endet am Freitag, den **24.03.2023 um 20.00Uhr**.
   * Änderungen die nach 20.00Uhr eingereicht werden können nicht mehr gewertet werden
 
-### Abgabe und Verlauf
+### Abgabe
 
-* Moodle?
+Die Abgabe der Arbeit erfolgt wie in der moodle-Aufgabe *Bestätigung der Abgabeform* angegeben.
+Wurde als Abgabeform ein Link zur Verfügung gestellt, so ist keine weitere Aktion erforderlich. Wurde die Abgabe in Dateiform gewählt, muss ein zip/tar Archiv mit allen Inhalten auf der [moodle-Seite des Kurs](https://elearning.dhbw-ravensburg.de/course/view.php?id=10824) hochgeladen werden.
 
 ## Zur Verfügung gestellter Quellcode
 
@@ -61,7 +69,7 @@ Für das Modul **library** werden vorab die leeren Dateien *library.h*, *library
 ## Vorgaben zur Arbeit
 
 ### Hauptanwendung
-Die Hauptanwendung dieses Programms soll nach dem Start folgenden Möglichkeiten zur Interaktion anbieten: 
+Die Hauptanwendung dieses Programms soll nach dem Start folgende Möglichkeiten zur Interaktion anbieten: 
 
 ```
 ========================
@@ -81,7 +89,7 @@ Die Bedeutung der einzelnen Aktionen soll sein:
 
 #### Print library
 
-Die im aktuell im Speicher vorhandene Struktur der Bibliotheksdatenbank soll auf der Befehlszeile ausgegeben werden. Die Ausgabe soll alle vorhanden Bücher und Studenten umfassen.
+Die aktuell im Speicher vorhandene Struktur der Bibliotheksdatenbank soll auf der Befehlszeile ausgegeben werden. Die Ausgabe soll alle vorhanden Bücher und Studenten umfassen.
 
 #### Add student
 
@@ -178,11 +186,12 @@ Zu den allgemeinen Vorgaben zum Programmentwurf gehören:
 - Die Projektstruktur (Ordnerstruktur) entspricht der Konvention aus der Vorlesung
 - Der Quellcode ist im notwendigen Umfang unter Verwendung von *gtest* getestet. 
 - Die *const correctness* wurde beachtet
-- Empfehlungen
+- **Empfehlungen**
   - Die Aufteilung von Arbeitspaketen auf Entwickler:innen ist oftmals hilfreich und sinnvoll
   - Die Entwicklung einzelner Arbeitspakete in gesonderten *Git-Branches* vereinfacht oftmals Vieles
     - Ein regelmäßiger Merge/Rebase mit der Mainline verhindert den *großen Konflikt (Big Bang)* am Ende
   - Konsequente Anwendung der Formatierungsrichtlininen vereinfacht die Zusammenarbeit
+
 - Offene Punkte: 
   - doxygen
   - CI
