@@ -49,7 +49,7 @@ jobs:
       run: cmake -B ${{github.workspace}}/code/build -S${{github.workspace}}/code -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} 
 
     - name: Build
-      run: cmake --build ${{github.workspace}}/code/build --config ${{env.BUILD_TYPE}} -DCMAKE_CXX_COMPILER=x86_64-w64-mingw32-g++ -DCMAKE_C_COMPILER=x86_64-w64-mingw32-gcc
+      run: cmake --build ${{github.workspace}}/code/build --config ${{env.BUILD_TYPE}} -DCMAKE_TOOLCHAIN_FILE=code/mingw-w64-x86_64.cmake
     
     - name: Install
       run: cmake --install ${{github.workspace}}/code/build --config ${{env.BUILD_TYPE}} --prefix  ${{github.workspace}}/downloads
