@@ -43,10 +43,10 @@ jobs:
     
     - name: Cache Binaries
       id: cache-binaries
-      uses: actions/cache@v2
+      uses: actions/cache/save@v3
       with:
         path: downloads
-        key: binary-cache-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
+        key: binary-cache-linux-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
       
   build_windows:
     runs-on: ubuntu-latest
@@ -73,10 +73,10 @@ jobs:
       
     - name: Cache Binaries
       id: cache-binaries
-      uses: actions/cache@v2
+      uses: actions/cache/save@v3
       with:
         path: downloads
-        key: binary-cache-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
+        key: binary-cache-windows-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
       
   create_release:
     needs: [build_linux, build_windows]
@@ -92,8 +92,7 @@ jobs:
       with:
         path: |
           downloads
-        restore-keys: |
-            binary-cache-
+        key: binary-cache-
     
     - name: check cache restore
       if: steps.cache.outputs.cache-hit != 'true'
