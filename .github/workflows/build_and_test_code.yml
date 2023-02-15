@@ -74,6 +74,5 @@ jobs:
         prerelease: true
         title: "Exam 1 Package"
         files: |
-          downloads/linux64/*
-          downloads/windows64/*
+          downloads/*
           docs/learn2code_exam_1.pdf
