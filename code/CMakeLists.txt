@@ -35,7 +35,7 @@ target_include_directories(exam_1_main PRIVATE include)
 target_link_libraries(exam_1_main PRIVATE uni_library)
 
 # installing targets
-if(NOT WIN32)
+if(WIN32)
     install(TARGETS exam_1_main DESTINATION "windows64")
 else()
     install(TARGETS exam_1_main DESTINATION "linux64")
