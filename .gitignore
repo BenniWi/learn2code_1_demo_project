@@ -3,3 +3,4 @@
 wget-log
 build/*
 *.pdf
+build

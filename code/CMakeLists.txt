@@ -34,8 +34,11 @@ target_include_directories(exam_1_main PRIVATE include)
 # link your library
 target_link_libraries(exam_1_main PRIVATE uni_library)
 
+# installing targets
+install(TARGETS exam_1_main DESTINATION .)
 
-if(NOT MSVC)
+
+if(NOT WIN32)
     # enable the testing
     enable_testing()
     # check if we have gtest
@@ -58,5 +61,3 @@ if(NOT MSVC)
 endif()
 
 
-# installing targets
-install(TARGETS exam_1_main DESTINATION .)
