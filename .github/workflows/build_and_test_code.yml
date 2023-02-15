@@ -43,6 +43,9 @@ jobs:
     - name: Test
       working-directory: ${{github.workspace}}/code/build
       run: ctest -C ${{env.BUILD_TYPE}}
+      
+    - name: clean-up linux build
+      run: rm -rf ${{github.workspace}}/code/build
 
 ## Do all the Build stuff for Windows
     - name: Configure CMake 4 Windows
