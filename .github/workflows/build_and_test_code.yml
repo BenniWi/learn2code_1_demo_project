@@ -46,7 +46,7 @@ jobs:
 
 ## Do all the Build stuff for Windows
     - name: Configure CMake 4 Windows
-      run: cmake -B ${{github.workspace}}/code/build -S${{github.workspace}}/code -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_TOOLCHAIN_FILE=code/mingw-w64-x86_64.cmake
+      run: cmake -B ${{github.workspace}}/code/build -S${{github.workspace}}/code -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} --toolchain ${{github.workspace}}/code/mingw-w64-x86_64.cmake
 
     - name: Build 4 Windows
       run: cmake --build ${{github.workspace}}/code/build --config ${{env.BUILD_TYPE}}
