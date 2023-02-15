@@ -3,8 +3,9 @@
 - [Inhalt der Prüfung](#inhalt-der-prüfung)
 - [Bearbeitung und Abgabe](#bearbeitung-und-abgabe)
   - [Bearbeitung](#bearbeitung)
+  - [Voraussetzungen](#voraussetzungen)
   - [Bearbeitungszeitraum](#bearbeitungszeitraum)
-  - [Abgabe und Verlauf](#abgabe-und-verlauf)
+  - [Abgabe](#abgabe)
 - [Zur Verfügung gestellter Quellcode](#zur-verfügung-gestellter-quellcode)
   - [Modul **book**](#modul-book)
   - [Modul **student**](#modul-student)
@@ -27,7 +28,7 @@ Entwerfen Sie ein Programm zur Verwaltung einer Bibliothek für Studierende. Daz
 Die Bearbeitung soll in Gruppen von zwei Personen erfolgen.
 In Einzelfällen kann eine Bearbeitung auch einzeln durchgeführt werden. Dies sollte jedoch vorher abgeklärt werden.
 
-### Vorraussetzungen
+### Voraussetzungen
 
 Auf der [moodle-Seite des Kurs](https://elearning.dhbw-ravensburg.de/course/view.php?id=10824) muss vorab:
 1. Ein Gruppe für den Programmentwurf gewählt werden

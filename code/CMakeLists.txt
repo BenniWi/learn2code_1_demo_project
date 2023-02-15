@@ -50,3 +50,7 @@ target_link_libraries(uni_library_tests PRIVATE uni_library)
 target_include_directories(uni_library_tests PRIVATE include)
 # discover and add tests to the test list
 gtest_discover_tests(uni_library_tests)
+
+
+# installing targets
+install(TARGETS exam_1_main DESTINATION .)

@@ -93,7 +93,7 @@ student const *library_get_student_4_matrnr(library *l, unsigned int MatrNr)
     return NULL;
 }
 
-void library_lend_book(library *const l, unsigned int MatrNr, const unsigned int ID)
+void library_lend_book(library *const l, const unsigned int MatrNr, const unsigned int ID)
 {
     if (l == NULL)
     {

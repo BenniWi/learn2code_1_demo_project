@@ -20,21 +20,21 @@ int main()
     /* add already some entries to the database for playing around*/
     student const *s = library_add_student(&lib, "max");
     book const *b = library_add_book(&lib, "having_fun");
-    library_lend_book(&lib, s, b->id);
+    library_lend_book(&lib, s->matrnr, b->id);
 
     s = library_add_student(&lib, "moritz");
     b = library_add_book(&lib, "how_to_play");
-    library_lend_book(&lib, s, b->id);
+    library_lend_book(&lib, s->matrnr, b->id);
     b = library_add_book(&lib, "rule_the_world");
-    library_lend_book(&lib, s, b->id);
+    library_lend_book(&lib, s->matrnr, b->id);
 
     s = library_add_student(&lib, "lilo");
     b = library_add_book(&lib, "no_way_home");
-    library_lend_book(&lib, s, b->id);
+    library_lend_book(&lib, s->matrnr, b->id);
 
     s = library_add_student(&lib, "stitch");
     b = library_add_book(&lib, "kidding around");
-    library_lend_book(&lib, s, b->id);
+    library_lend_book(&lib, s->matrnr, b->id);
 
     library_add_student(&lib, "pinky");
 #endif
@@ -89,7 +89,7 @@ int main()
                 {
                     unsigned int bookID = (unsigned int)strtol(input1, &ptr, 10);
                     unsigned int MatrNr = (unsigned int)strtol(input2, &ptr, 10);
-                    library_lend_book(&lib, library_get_student_4_matrnr(&lib, MatrNr), bookID);
+                    library_lend_book(&lib, MatrNr, bookID);
                 }
                 break;
             case 5:
