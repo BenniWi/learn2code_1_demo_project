@@ -2,7 +2,7 @@ name: build and test code
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "test"]
   pull_request:
     branches: [ "main" ]
 
@@ -11,7 +11,7 @@ env:
   BUILD_TYPE: Release
 
 jobs:
-  build:
+  build_linux:
     # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
     # You can convert this to a matrix build if you need cross-platform coverage.
     # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
@@ -23,14 +23,11 @@ jobs:
     - name: Install gtest manually
       run: sudo apt-get install libgtest-dev
     
-    - name: Install windows compiler
-      run: sudo apt-get install mingw-w64
-
     - name: Create a temporary artifact downloads folder
       working-directory: ${{github.workspace}}/
       run: mkdir downloads
 
-## Do all the Build stuff for Linux
+    ## Do all the Build stuff for Linux
     - name: Configure CMake 4 Linux
       run: cmake -B ${{github.workspace}}/code/build -S${{github.workspace}}/code -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} 
 
@@ -43,11 +40,28 @@ jobs:
     - name: Test
       working-directory: ${{github.workspace}}/code/build
       run: ctest -C ${{env.BUILD_TYPE}}
+    
+    - name: Cache Binaries
+      id: cache-binaries
+      uses: actions/cache@v2
+      with:
+        path: downloads
+        key: binary-cache-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
       
-    - name: clean-up linux build
-      run: rm -rf ${{github.workspace}}/code/build
-
-## Do all the Build stuff for Windows
+  build_windows:
+    runs-on: ubuntu-latest
+    
+    steps: 
+    - uses: actions/checkout@v3
+    
+    - name: Install windows compiler
+      run: sudo apt-get install mingw-w64
+      
+    - name: Create a temporary artifact downloads folder
+      working-directory: ${{github.workspace}}/
+      run: mkdir downloads
+      
+    ## Do all the Build stuff for Windows
     - name: Configure CMake 4 Windows
       run: cmake -B ${{github.workspace}}/code/build -S${{github.workspace}}/code -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} --toolchain ${{github.workspace}}/code/mingw-w64-x86_64.cmake
 
@@ -56,15 +70,43 @@ jobs:
     
     - name: Install 4 Windows
       run: cmake --install ${{github.workspace}}/code/build --config ${{env.BUILD_TYPE}} --prefix  ${{github.workspace}}/downloads
+      
+    - name: Cache Binaries
+      id: cache-binaries
+      uses: actions/cache@v2
+      with:
+        path: downloads
+        key: binary-cache-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
+      
+  create_release:
+    needs: [build_linux, build_windows]
+    runs-on: ubuntu-latest
+    
+    steps: 
+    
+    - uses: actions/checkout@v3
+    
+    - name: Restore cached Binaries
+      id: cache-binaries-restore
+      uses: actions/cache/restore@v3
+      with:
+        path: |
+          downloads
+        restore-keys: |
+            binary-cache-
+    
+    - name: check cache restore
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: echo "Found keys"
 
-## Zip the code_4_exam folder
+    ## Zip the code_4_exam folder
     - name: action-zip
       if: ${{ github.ref == 'refs/heads/main' }} # pre release only on main
       uses: montudor/action-zip@v1.0.0
       with:
         args: zip -qq -r downloads/code_4_exam.zip code_4_exam
 
-# create pre-release
+    # create pre-release
     - name: create a pre-release
       if: ${{ github.ref == 'refs/heads/main' }} # pre release only on main
       uses: "marvinpinto/action-automatic-releases@latest"
