@@ -51,7 +51,7 @@ jobs:
       if: ${{ github.ref == 'refs/heads/main' }} # pre release only on main
       uses: montudor/action-zip@v1.0.0
       with:
-        args: zip -qq -r downloads/code_4_exam.zip ${{github.workspace}}/code_4_exam
+        args: zip -qq -r downloads/code_4_exam.zip code_4_exam
 
 # create pre-release
     - name: create a pre-release
