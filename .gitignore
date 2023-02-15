@@ -1,0 +1,6 @@
+*.out
+.vscode
+wget-log
+build/*
+*.pdf
+build

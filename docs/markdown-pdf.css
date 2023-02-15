@@ -1,0 +1,81 @@
+html {
+    scroll-behavior: smooth;
+    background-color: #ffffff;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.2px;
+    color: #333;
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+}
+
+h1 {
+    font-family: 'Noto Serif', serif;
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 10px;
+
+}
+
+h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: left;
+    color: #333;
+    /*margin-block-start: 40px;
+    margin-block-end: 30px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;*/
+}
+
+h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: left;
+    color: #333;
+    /*margin-block-start: 40px;
+    margin-block-end: 30px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;*/
+}
+
+h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
+    color: #333;
+    /*margin-block-start: 40px;
+    margin-block-end: 30px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;*/
+}
+
+p {
+    font-size: 13px;
+    line-height: 15px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul li{
+    font-size:13px;
+   }
+
+ol li{
+    font-size:13px;
+   }
+
+pagenumber {
+    font-family: Georgia, serif;
+}
