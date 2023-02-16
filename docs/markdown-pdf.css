@@ -16,11 +16,11 @@ h1 {
     font-size: 20px;
     line-height: 30px;
     margin-bottom: 10px;
-
 }
 
 h2 {
     font-family: 'Noto Serif', serif;
+    text-decoration: underline;
     font-size: 18px;
     line-height: 25px;
     text-align: left;
@@ -33,6 +33,7 @@ h2 {
 
 h3 {
     font-family: 'Noto Serif', serif;
+    text-decoration: underline;
     font-size: 16px;
     line-height: 25px;
     text-align: left;
@@ -43,7 +44,7 @@ h3 {
     margin-inline-end: 0px;*/
 }
 
-h3 {
+h4 {
     font-family: 'Noto Serif', serif;
     font-size: 14px;
     line-height: 20px;

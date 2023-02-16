@@ -158,10 +158,13 @@ void library_print(...);
 
 Zu den allgemeinen Vorgaben zum Programmentwurf gehören:
 * Das gesamte Projekt soll unter Verwendung von *CMake* realisiert werden.
+* Das gesamte Projekt soll in der Programmiersprache *C* unter Verwendung des Standards *C11* umgesetzt werden.
+  * Ausnahme sind die Tests: hier muss die Programmiersprache *C++* verwendet werden. Der Standard sollte *C++14* oder neuer sein.
 * Die Struktur des Projektes soll der in der Vorlesungen erarbeiteten Struktur entsprechen (*include;src;test*)
 * Die Tests sollen unter Verwendung der Testbibliothek *google-test* (gtest) geschrieben werden
 * Das Projekt soll während der gesamten Bearbeitungszeit mittels des Versionsverwaltungssystems *Git* versioniert werden. Die Verwendung von [GitHub](https://github.com/) ist empfohlen, jedoch nicht notwendig. 
 * IDE, Betriebssystem, Compiler etc. werden nicht näher vorgegeben, das Kapitel [Bewertungskriterien](#bewertungskriterien) sollte jedoch Beachtung finden.
+* Für den Compiler sollen die folgenden Optionen aktiviert werden: *-Wall -Wextra -pedantic*
 
 ## Bewertungskriterien
 
@@ -171,7 +174,7 @@ Zu den allgemeinen Vorgaben zum Programmentwurf gehören:
   - Virtuelle Umgebung
     - Der im [learn-git Repository](https://github.com/BenniWi/learn-git) bereitgestellte *Codespace*
     - Der im [learn-git Repository](https://github.com/BenniWi/learn-git) bereitgestellte *Gitpod Container*
-    - relevante Compiler Alternative: 
+    - relevante Compiler Alternativen: 
       - GCC 9.4.0
       - Clang 10.0.0
 - Die Projektsprache ist **ENGLISCH**
