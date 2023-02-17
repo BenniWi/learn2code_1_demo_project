@@ -9,7 +9,19 @@ typedef struct
     char title[BOOK_MAX_NAME_LENGTH];
 } book;
 
+/**
+ * @brief initialize the book structure
+ *
+ * @param b book
+ * @param title title of the book
+ */
 void book_init(book *b, const char title[BOOK_MAX_NAME_LENGTH]);
+
+/**
+ * @brief print the book structure to the stdout
+ *
+ * @param b book
+ */
 void book_print(book const *b);
 
 #endif /* BOOK_H_ */
