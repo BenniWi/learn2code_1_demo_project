@@ -11,7 +11,7 @@ typedef struct
 
 /**
  * @brief initialize the student structure
- * 
+ *
  * @param s student
  * @param name name of the student
  */
@@ -19,7 +19,7 @@ void student_init(student *s, const char name[STUDENT_MAX_NAME_LENGTH]);
 
 /**
  * @brief print the structure student to the stdout
- * 
+ *
  * @param s student
  */
 void student_print(student const *s);
