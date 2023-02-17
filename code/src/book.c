@@ -8,7 +8,7 @@ void book_init(book *const b, const char title[BOOK_MAX_NAME_LENGTH])
 {
     if (b == NULL)
     {
-        printf("Invalid data\n");
+        printf("\033[4;33mbook init: invalid data\n\033[0m");
     }
     else
     {
@@ -22,7 +22,7 @@ void book_print(book const *const b)
 {
     if (b == NULL)
     {
-        printf("Invalid data\n");
+        printf("\033[4;33mbook print: invalid data\n\033[0m");
     }
     else
     {

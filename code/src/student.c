@@ -8,7 +8,7 @@ void student_init(student *const s, const char name[STUDENT_MAX_NAME_LENGTH])
 {
     if (s == NULL)
     {
-        printf("Invalid data\n");
+        printf("\033[4;33mstudent init: invalid data\n\033[0m");
     }
     else
     {
@@ -22,7 +22,7 @@ void student_print(student const *const s)
 {
     if (s == NULL)
     {
-        printf("Invalid data\n");
+        printf("\033[4;33mstudent print: invalid data\n\033[0m");
     }
     else
     {

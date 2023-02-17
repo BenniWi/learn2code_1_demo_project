@@ -25,7 +25,7 @@ class LibraryTestFixture : public ::testing ::Test
             library_add_book(&lib, title);
         }
 
-        library_lend_book(&lib, lib.student_list[1].matrnr, lib.book_list[2].id);
+        ASSERT_EQ(library_lend_book(&lib, lib.student_list[1].matrnr, lib.book_list[2].id), true);
     }
 };
 
@@ -53,6 +53,12 @@ TEST_F(LibraryTestFixture, add_book_overflow)
     ASSERT_EQ(nullptr, b);
 }
 
+TEST_F(LibraryTestFixture, add_book_invalid)
+{
+    book const *b = library_add_book(nullptr, "nonsense title");
+    ASSERT_EQ(nullptr, b);
+}
+
 TEST_F(LibraryTestFixture, find_student)
 {
     student const *s = library_get_student_4_matrnr(&lib, lib.student_list[3].matrnr);
@@ -65,9 +71,21 @@ TEST_F(LibraryTestFixture, find_not_existing_student)
     ASSERT_EQ(s, nullptr);
 }
 
+TEST_F(LibraryTestFixture, find_student_invalid)
+{
+    student const *s = library_get_student_4_matrnr(nullptr, 12345);
+    ASSERT_EQ(s, nullptr);
+}
+
 TEST_F(LibraryTestFixture, add_student_overflow)
 {
     student const *s = library_add_student(&lib, "nonsense name");
+    ASSERT_EQ(nullptr, s);
+}
+
+TEST_F(LibraryTestFixture, add_student_invalid)
+{
+    student const *s = library_add_student(nullptr, "nonsense name");
     ASSERT_EQ(nullptr, s);
 }
 
@@ -79,33 +97,43 @@ TEST_F(LibraryTestFixture, lend_book)
 
 TEST_F(LibraryTestFixture, lend_not_available_book)
 {
-    library_lend_book(&lib, lib.student_list[2].matrnr, lib.book_list[2].id);
+    ASSERT_EQ(library_lend_book(&lib, lib.student_list[2].matrnr, lib.book_list[2].id), false);
     // book is still lent correctly
     ASSERT_EQ(lib.lend_list[2]->matrnr, lib.student_list[1].matrnr);
 }
 
 TEST_F(LibraryTestFixture, lend_not_existing_book)
 {
-    library_lend_book(&lib, lib.student_list[2].matrnr, 123456);
+    ASSERT_EQ(library_lend_book(&lib, lib.student_list[2].matrnr, 123456), false);
+}
+
+TEST_F(LibraryTestFixture, lend_book_invalid)
+{
+    ASSERT_EQ(library_lend_book(nullptr, lib.student_list[2].matrnr, 123456), false);
 }
 
 TEST_F(LibraryTestFixture, return_book)
 {
-    library_return_book(&lib, lib.book_list[2].id);
+    ASSERT_EQ(library_return_book(&lib, lib.book_list[2].id), true);
     // book is lent correctly
     ASSERT_EQ(lib.lend_list[2], nullptr);
 }
 
 TEST_F(LibraryTestFixture, return_not_lent_book)
 {
-    library_return_book(&lib, lib.book_list[1].id);
+    ASSERT_EQ(library_return_book(&lib, lib.book_list[1].id), false);
     // book is lent correctly
     ASSERT_EQ(lib.lend_list[1], nullptr);
 }
 
 TEST_F(LibraryTestFixture, return_not_existing_book)
 {
-    library_return_book(&lib, 123456);
+    ASSERT_EQ(library_return_book(&lib, 123456), false);
+}
+
+TEST_F(LibraryTestFixture, return_book_invalid)
+{
+    ASSERT_EQ(library_return_book(nullptr, 123456), false);
 }
 
 TEST_F(LibraryTestFixture, find_book)
@@ -126,16 +154,27 @@ TEST_F(LibraryTestFixture, find_not_existing_book)
     ASSERT_EQ(s, nullptr);
 }
 
+TEST_F(LibraryTestFixture, find_book_invalid)
+{
+    student const *const s = library_find_book(nullptr, 12345);
+    ASSERT_EQ(s, nullptr);
+}
+
 TEST_F(LibraryTestFixture, list_books_4_students)
 {
     // lend a second book
-    library_lend_book(&lib, lib.student_list[1].matrnr, lib.book_list[3].id);
+    ASSERT_EQ(library_lend_book(&lib, lib.student_list[1].matrnr, lib.book_list[3].id), true);
     library_list_books_4_student(&lib, lib.student_list[1].matrnr);
 }
 
 TEST_F(LibraryTestFixture, list_books_4_students_w_no_books)
 {
     library_list_books_4_student(&lib, lib.student_list[4].matrnr);
+}
+
+TEST_F(LibraryTestFixture, list_books_4_students_w_no_books_invalid)
+{
+    library_list_books_4_student(nullptr, lib.student_list[4].matrnr);
 }
 
 TEST_F(LibraryTestFixture, print_valid)

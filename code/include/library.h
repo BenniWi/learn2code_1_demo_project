@@ -1,6 +1,8 @@
 #ifndef LIBRARY_H_
 #define LIBRARY_H_
 
+#include <stdbool.h>
+
 #include "book.h"
 #include "student.h"
 
@@ -22,9 +24,9 @@ book const *library_add_book(library *l, const char title[]);
 
 student const *library_get_student_4_matrnr(library *l, unsigned int MatrNr);
 
-void library_lend_book(library *l, unsigned int MatrNr, unsigned int ID);
+bool library_lend_book(library *l, unsigned int MatrNr, unsigned int ID);
 
-void library_return_book(library *l, unsigned int ID);
+bool library_return_book(library *l, unsigned int ID);
 
 student const *library_find_book(library const *l, unsigned int ID);
 

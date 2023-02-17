@@ -18,7 +18,8 @@
     "*.tcc": "c",
     "library.h": "c",
     "errno.h": "c",
-    "string.h": "c"
+    "string.h": "c",
+    "stdbool.h": "c"
   },
 
 

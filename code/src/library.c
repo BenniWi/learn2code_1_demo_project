@@ -8,7 +8,7 @@ void library_init(library *const l)
 {
     if (l == NULL)
     {
-        printf("Invalid data\n");
+        printf("\033[4;33mlibrary init: invalid data\n\033[0m");
     }
     else
     {
@@ -35,7 +35,7 @@ student const *library_add_student(library *const l, const char name[])
 {
     if (l == NULL)
     {
-        printf("Invalid data\n");
+        printf("\033[4;33madd student: invalid data\n\033[0m");
     }
     else
     {
@@ -56,7 +56,7 @@ book const *library_add_book(library *const l, const char title[])
 {
     if (l == NULL)
     {
-        printf("Invalid data\n");
+        printf("\033[4;33madd book: invalid data\n\033[0m");
     }
     else
     {
@@ -77,7 +77,7 @@ student const *library_get_student_4_matrnr(library *l, unsigned int MatrNr)
 {
     if (l == NULL)
     {
-        printf("Invalid data\n");
+        printf("\033[4;33mget student 4 matrnr: invalid data\n\033[0m");
     }
     else
     {
@@ -93,11 +93,12 @@ student const *library_get_student_4_matrnr(library *l, unsigned int MatrNr)
     return NULL;
 }
 
-void library_lend_book(library *const l, const unsigned int MatrNr, const unsigned int ID)
+bool library_lend_book(library *const l, const unsigned int MatrNr, const unsigned int ID)
 {
+    bool success = false;
     if (l == NULL)
     {
-        printf("Invalid data\n");
+        printf("\033[4;33mlend book: invalid data\n\033[0m");
     }
     else
     {
@@ -109,24 +110,27 @@ void library_lend_book(library *const l, const unsigned int MatrNr, const unsign
                 {
                     student const *const s = library_get_student_4_matrnr(l, MatrNr);
                     l->lend_list[i] = s;
+                    success = true;
                 }
                 else
                 {
                     printf("Book with ID=%i is already lent by student:\n", ID);
                     student_print(l->lend_list[i]);
                 }
-                return;
+                return success;
             }
         }
         printf("Can not lend book with ID=%i. It does not exist.\n", ID);
     }
+    return success;
 }
 
-void library_return_book(library *const l, const unsigned int ID)
+bool library_return_book(library *const l, const unsigned int ID)
 {
+    bool success = false;
     if (l == NULL)
     {
-        printf("Invalid data\n");
+        printf("\033[4;33mreturn book: invalid data\n\033[0m");
     }
     else
     {
@@ -141,12 +145,14 @@ void library_return_book(library *const l, const unsigned int ID)
                 else
                 {
                     l->lend_list[i] = NULL;
+                    success = true;
                 }
-                return;
+                return success;
             }
         }
         printf("Can not return book with ID=%i. It does not exist.\n", ID);
     }
+    return success;
 }
 
 student const *library_find_book(library const *const l, const unsigned int ID)
@@ -154,7 +160,7 @@ student const *library_find_book(library const *const l, const unsigned int ID)
     unsigned int found = 0;
     if (l == NULL)
     {
-        printf("Invalid data\n");
+        printf("\033[4;33mfind book: invalid data\n\033[0m");
     }
     else
     {
@@ -187,7 +193,7 @@ void library_list_books(library const *const l)
 {
     if (l == NULL)
     {
-        printf("Invalid data\n");
+        printf("\033[4;33mlist books: invalid data\n\033[0m");
     }
     else
     {
@@ -208,7 +214,7 @@ void library_list_students(library const *const l)
 {
     if (l == NULL)
     {
-        printf("Invalid data\n");
+        printf("\033[4;33mInvalid data\n\033[0m");
     }
     else
     {
@@ -229,7 +235,7 @@ void library_list_books_4_student(library const *const l, const unsigned int Mat
 {
     if (l == NULL)
     {
-        printf("Invalid data\n");
+        printf("\033[4;33mlist books 4 student: invalid data\n");
     }
     else
     {
@@ -250,7 +256,7 @@ void library_print(library const *const l)
 {
     if (l == NULL)
     {
-        printf("Invalid data\n");
+        printf("\033[4;33mlibrary print: invalid data\n\033[0m");
     }
     else
     {
