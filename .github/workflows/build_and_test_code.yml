@@ -108,7 +108,7 @@ jobs:
         path: macos_binary_dir
       
   create_release:
-    needs: [build_linux, build_windows]
+    needs: [build_linux, build_windows, build_macos]
     runs-on: ubuntu-latest
     
     steps: 
@@ -124,6 +124,11 @@ jobs:
       with:
         name: windows_binaries
         path: windows_binary_dir
+        
+    - uses: actions/download-artifact@master
+      with:
+        name: macos_binaries
+        path: macos_binary_dir
 
     ## Zip the code_4_exam folder
     - name: action-zip
@@ -144,5 +149,6 @@ jobs:
         files: |
           linux_binary_dir/*
           windows_binary_dir/*
+          macos_binary_dir/*
           code_4_exam.zip
           docs/learn2code_exam_1.pdf
