@@ -1,11 +1,31 @@
-# learn-git
-a public repo to test and learn git
+# learn2code Part I - Demo Project
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=559622217&machine=basicLinux32gb&location=WestEurope)
+This repository is a demo and a template for software projects written in **C**.
 
-<a href="https://gitpod.io/#git@github.com:BenniWi/learn-git.git">
-  <img
-    src="https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod"
-    alt="Contribute with Gitpod"
-  />
-</a>
+The project is highly depending on the content of the lecture [learn2code](https://github.com/BenniWi/learn2code).
+
+The content of this demo is among others:
+
+* Writing code in **C**
+  * variables
+  * structures
+  * functions
+  * pointers
+  * ... (see [ToC of learn2code](https://github.com/BenniWi/learn2code/blob/main/docs/slides_learn2code_1.md#table-of-contents))
+* Setting up **GitHub Codespace**
+* Setting up a **Gitpod Workspace**
+* Usage of **CMake** in projects
+  * adding and creating libraries
+  * adding executables
+  * adding compile options
+  * adding **google-test*
+  * cross-compile for Windows on Linux
+* Using **GitHub Actions**
+  * build code on different platforms
+  * test code with **google-test* and **CTest**
+  * parallel jobs
+  * upload artifacts in job
+  * collect artifacts from different jobs
+  * create pre-releases on *main*
+  * running formatting checks with clang-format
+* using **clang-tidy** in **VS Code**
