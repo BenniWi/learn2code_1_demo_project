@@ -12,7 +12,7 @@
         "twxs.cmake",
         "mhutchie.git-graph",
         "ms-vscode.cpptools-themes",
-        "notskm.clang-tidy",
+        "cs128.cs128-clang-tidy",
         "xaver.clang-format",
         "marp-team.marp-vscode",
         "zaaack.markdown-editor",
@@ -29,7 +29,9 @@
         "cschlosser.doxdocgen",
         "DavidAnson.vscode-markdownlint",
 				"mdickin.markdown-shortcuts",
-				"ElecTreeFrying.insert-random-text"
+				"ElecTreeFrying.insert-random-text",
+        "betwo.vscode-doxygen-runner",
+        "ms-vscode.live-server"
 			]
 		}
 	}
