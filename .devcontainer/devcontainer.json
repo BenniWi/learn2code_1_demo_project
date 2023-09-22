@@ -1,38 +1,41 @@
 {
-  "build": { "dockerfile": "Dockerfile" },
+  "image": "benniwi/learn2code:base",
 
   // Configure tool-specific properties.
-	"customizations": {
-		// Configure properties specific to VS Code.
-		"vscode": {		
-			// Add the IDs of extensions you want installed when the container is created.
-			"extensions": [
-        "donjayamanne.githistory",
-        "ms-python.python",
-        "twxs.cmake",
-        "mhutchie.git-graph",
-        "ms-vscode.cpptools-themes",
-        "cs128.cs128-clang-tidy",
-        "xaver.clang-format",
-        "marp-team.marp-vscode",
-        "zaaack.markdown-editor",
-        "ms-vscode.cmake-tools",
-        "ms-azuretools.vscode-docker",
-        "yzhang.markdown-all-in-one",
-        "ms-vscode.cpptools",
-        "ms-vscode.cpptools-extension-pack",
-        "franneck94.c-cpp-runner",
-        "yzane.markdown-pdf",
-        "tomoki1207.pdf",
-        "streetsidesoftware.code-spell-checker",
-        "streetsidesoftware.code-spell-checker-german",
-        "cschlosser.doxdocgen",
-        "DavidAnson.vscode-markdownlint",
-				"mdickin.markdown-shortcuts",
-				"ElecTreeFrying.insert-random-text",
-        "betwo.vscode-doxygen-runner",
-        "ms-vscode.live-server"
-			]
-		}
-	}
+"customizations": {
+  // Configure properties specific to VS Code.
+  "vscode": {		
+    // Add the IDs of extensions you want installed when the container is created.
+    "extensions": [
+      "donjayamanne.githistory",
+      "ms-python.python",
+      "twxs.cmake",
+      "mhutchie.git-graph",
+      "ms-vscode.cpptools-themes",
+      "cs128.cs128-clang-tidy",
+      "xaver.clang-format",
+      "marp-team.marp-vscode",
+      "zaaack.markdown-editor",
+      "ms-vscode.cmake-tools",
+      "ms-azuretools.vscode-docker",
+      "yzhang.markdown-all-in-one",
+      "ms-vscode.cpptools",
+      "ms-vscode.cpptools-extension-pack",
+      "franneck94.c-cpp-runner",
+      "yzane.markdown-pdf",
+      "tomoki1207.pdf",
+      "streetsidesoftware.code-spell-checker",
+      "streetsidesoftware.code-spell-checker-german",
+      "cschlosser.doxdocgen",
+      "DavidAnson.vscode-markdownlint",
+      "mdickin.markdown-shortcuts",
+      "betwo.vscode-doxygen-runner",
+      "ms-vscode.live-server",
+      "ElecTreeFrying.insert-random-text",
+      "ElecTreeFrying.insert-random-text",
+      "streetsidesoftware.code-spell-checker-british-english",
+      "streetsidesoftware.code-spell-checker-german"
+    ]
+  }
+}
 }
