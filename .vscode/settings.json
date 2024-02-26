@@ -23,6 +23,7 @@
   },
 
   "cmake.options.statusBarVisibility": "compact",
+  "cmake.configureArgs": ["-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"],
 
   "[c]": {
     "editor.defaultFormatter": "xaver.clang-format"
