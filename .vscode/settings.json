@@ -22,6 +22,7 @@
     "stdbool.h": "c"
   },
 
+  "cmake.options.statusBarVisibility": "compact",
 
   "[c]": {
     "editor.defaultFormatter": "xaver.clang-format"
