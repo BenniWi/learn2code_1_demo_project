@@ -39,8 +39,11 @@
   "clang-tidy.compilerArgs": [
       "--config-file=.clang-tidy"
   ],
+  "clang-tidy.buildPath": "build",
 
   "markdown.extension.toc.levels": "2..3",
   
-  "markdown-pdf.convertOnSave": true
+  "markdown-pdf.convertOnSave": true,
+
+  "terminal.integrated.defaultProfile.linux": "bash",
 }
