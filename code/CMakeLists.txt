@@ -37,6 +37,7 @@ target_link_libraries(demo_1_main PRIVATE uni_library)
 # installing targets
 install(TARGETS demo_1_main DESTINATION .)
 
+include(CTest)
 if(NOT WIN32)
     # enable the testing
     enable_testing()
